@@ -1,59 +1,195 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kadeer N A | Portfolio</title>
+    <title>Kadeer  | Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #181c24; color: #f3f3f3; margin: 0; }
+        .hero { position: relative; height: 340px; display: flex; align-items: center; justify-content: center; text-align: center; margin-bottom: 2rem; }
+        .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(120deg, #232946 0%, #1a1a2e 100%); opacity: 0.28; z-index: 1; }
+        .hero-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; }
+        .hero-img { margin-left: auto; margin-right: auto; display: block; }
+        .hero-subtitle { font-size: 1.2em; color: #fff; margin-bottom: 1.2rem; }
+        .cta-btn { display: inline-block; background: #00c6ff; color: #181c24; padding: 10px 28px; border-radius: 24px; text-decoration: none; font-weight: 600; box-shadow: 0 2px 8px rgba(0,123,255,0.08); transition: background 0.2s; }
+        .cta-btn:hover { background: #007bff; color: #fff; }
+        header { background: #232946; color: #f3f3f3; padding-bottom: 0.5rem; display: flex; flex-direction: column; align-items: center; }
+        header img.profile-img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem; border: 3px solid #333; }
+        nav { margin-top: 0.5rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+        nav a { color: #00c6ff; text-decoration: none; font-weight: 500; transition: color 0.2s; }
+        nav a:hover { color: #fff; }
+        .about-card { background: #232946; color: #f3f3f3; border-radius: 18px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); padding: 2rem; max-width: 700px; margin: 0 auto 2rem auto; }
+        .skills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+        .skill-badge { background: linear-gradient(90deg, #232946 0%, #393e46 100%); color: #fff; padding: 6px 18px; border-radius: 20px; font-size: 1em; font-weight: 500; box-shadow: 0 1px 4px rgba(0,0,0,0.04); opacity: 0; }
+        .about.visible .skill-badge { opacity: 1; transition: opacity 0.6s; }
+        .project-grid { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; align-items: stretch; }
+        .project { background: #232946; color: #f3f3f3; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); padding: 1.5rem; width: 320px; margin-bottom: 1.5rem; transition: transform 0.2s; display: flex; flex-direction: column; align-items: flex-start; }
+        .project h3, .project p, .project ul { align-self: flex-start; }
+        .cert-list li { margin-bottom: 8px; }
+        .cert-icon { color: #00c6ff; margin-right: 8px; }
+        .contact-list { list-style: none; padding: 0; }
+        .contact-list li { margin-bottom: 8px; }
+        .contact-icon { margin-right: 8px; color: #00c6ff; }
+        footer { background: linear-gradient(90deg, #232946 0%, #1a1a2e 100%); color: #f3f3f3; padding: 1.2rem 0 0.5rem 0; margin-top: 2rem; }
+        .footer-content { display: flex; flex-direction: column; align-items: center; }
+        .footer-social { margin-top: 0.5rem; display: flex; justify-content: center; gap: 10px; }
+        #backToTop { position: fixed; bottom: 30px; right: 30px; display: none; background: #232946; color: #00c6ff; border: none; border-radius: 50%; width: 44px; height: 44px; font-size: 1.5em; cursor: pointer; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+        /* Animations */
+        section { opacity: 0; transform: translateY(40px); transition: opacity 0.7s, transform 0.7s; }
+        section.visible { opacity: 1; transform: none; }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Kadeer N A</h1>
-        <p>Aspiring Full Stack Developer | MCA Student</p>
-        <nav>
-            <a href="#projects">Projects</a>
-            <a href="#certifications">Certifications</a>
-            <a href="#contact">Contact</a>
-            <a href="Kadeer_Resume.pdf" target="_blank">Resume</a>
-        </nav>
-    </header>
+       
+        <header>
+            <img src="Kadeer's Photo.jpg" alt="Kadeer N A" class="profile-img">
+            <h1>Kadeer N A</h1>
+            <p>Aspiring Full Stack Developer | MCA Student</p>
+            <nav>
+                <a href="#projects">Projects</a>
+                <a href="#certifications">Certifications</a>
+                <a href="#contact">Contact</a>
+                <a href="Kadeer_Resume.pdf" target="_blank">Resume</a>
+            </nav>
+        </header>
 
-    <section class="about">
-        <h2>About Me</h2>
-        <p>Motivated and adaptable professional with a solid foundation in DSA, OOP, and web development. 
-           Experienced in delivering innovative solutions and contributing to collaborative projects.</p>
-    </section>
+        <section class="about">
+            <div class="about-card">
+                <h2>About Me</h2>
+                <p>Motivated and adaptable professional with a solid foundation in DSA, OOP, and web development. 
+                   Experienced in delivering innovative solutions and contributing to collaborative projects.</p>
+                <div>
+                    <h3>Skills</h3>
+                    <div class="skills">
+                        <span class="skill-badge">HTML5</span>
+                        <span class="skill-badge">CSS3</span>
+                        <span class="skill-badge">JavaScript</span>
+                        <span class="skill-badge">ReactJS</span>
+                        <span class="skill-badge">PHP</span>
+                        <span class="skill-badge">MySQL</span>
+                        <span class="skill-badge">REST APIs</span>
+                        <span class="skill-badge">OOP</span>
+                        <span class="skill-badge">DSA</span>
+                        <span class="skill-badge">Git</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Online Visa Provider</h3>
-            <p>Developed a responsive visa application system using HTML, CSS, JavaScript, ReactJS, and REST APIs, reducing processing time by 15%.</p>
-        </div>
-        <div class="project">
-            <h3>Internal Company Website</h3>
-            <p>Created a company website using ReactJS, PHP, and MySQL with a secure backend and responsive design aligned with branding.</p>
-        </div>
-    </section>
+        <section class="experience">
+            <div class="about-card">
+                <h2>Internship Experience</h2>
+                <div class="internship">
+                    <h3>Full Stack Web Developer <span style="font-weight:400; color:#00c6ff;">@ Mahino Inc</span></h3>
+                    <ul>
+                        <li>Worked as a Full Stack Web Developer intern at Mahino Inc.</li>
+                        <li>Contributed to both frontend and backend development of web applications.</li>
+                        <li>Collaborated with cross-functional teams to deliver scalable solutions.</li>
+                        <li>Gained hands-on experience with modern web technologies and agile workflows.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-    <section id="certifications">
-        <h2>Certifications & Awards</h2>
-        <ul>
-            <li>Full Stack Web Programming – Infosys Springboard</li>
-            <li>Best Theme Interpretation – Gameathon 2.0 (2023)</li>
-        </ul>
-    </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project">
+                    <div class="project-icon"><i class="fa-solid fa-passport"></i></div>
+                    <h3>Online Visa Provider</h3>
+                    <p>Developed a responsive visa application system using HTML, CSS, JavaScript, ReactJS, and REST APIs, reducing processing time by 15%.</p>
+                    <ul>
+                        <li>Role: Full Stack Developer</li>
+                        <li>Features: User authentication, document upload, admin dashboard, status tracking</li>
+                       
+                    </ul>
+                </div>
+                <div class="project">
+                    <div class="project-icon"><i class="fa-solid fa-building"></i></div>
+                    <h3>Internal Company Website</h3>
+                    <p>Created a company website using ReactJS, PHP, and MySQL with a secure backend and responsive design aligned with branding.</p>
+                    <ul>
+                        <li>Role: Frontend & Backend Developer</li>
+                        <li>Features: Employee portal, announcements, internal chat, role-based access</li>
+                       
+                    </ul>
+                </div>
+                <div class="project">
+                    <div class="project-icon"><i class="fa-solid fa-user"></i></div>
+                    <h3>Portfolio Website</h3>
+                    <p>Personal portfolio built with HTML, CSS, and JavaScript to showcase projects and skills.</p>
+                    <ul>
+                        <li>Role: Designer & Developer</li>
+                        <li>Features: Responsive design, smooth scrolling, downloadable resume</li>
+                        <li><a href="https://kadeer27.github.io/KadeerPortfolio/" target="_blank"><i class="fab fa-github"></i> View on GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:kadeer2708@gmail.com">kadeer2708@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/kadeer27" target="_blank">kadeer27</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/kadeer-na" target="_blank">kadeer-na</a></p>
-    </section>
+        <section id="certifications">
+            <h2>Certifications & Awards</h2>
+            <ul class="cert-list">
+                <li><i class="fa-solid fa-certificate cert-icon"></i>Full Stack Web Programming – Infosys Springboard</li>
+                <li><i class="fa-solid fa-trophy cert-icon"></i>Best Theme Interpretation – Gameathon 2.0 (2023)</li>
+            </ul>
+        </section>
 
-    <footer>
-        <p>&copy; 2025 Kadeer N A</p>
-    </footer>
-</body>
+        <section id="contact">
+            <h2>Contact</h2>
+            <ul class="contact-list">
+                <li><i class="fa-solid fa-envelope contact-icon"></i>Email: <a href="mailto:kadeer2708@gmail.com">kadeer2708@gmail.com</a></li>
+                <li><i class="fab fa-github contact-icon"></i>GitHub: <a href="https://github.com/kadeer27" target="_blank">kadeer27</a></li>
+                <li><i class="fab fa-linkedin contact-icon"></i>LinkedIn: <a href="https://linkedin.com/in/kadeer-na" target="_blank">kadeer-na</a></li>
+            </ul>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2025 Kadeer N A</p>
+                <div class="footer-social">
+                    <a href="https://github.com/kadeer27" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/kadeer-na" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:kadeer2708@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+        </footer>
+        <button id="backToTop" title="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+        <script>
+            // Show/hide back to top button
+            const backToTop = document.getElementById('backToTop');
+            window.onscroll = function() {
+                if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                    backToTop.style.display = "block";
+                } else {
+                    backToTop.style.display = "none";
+                }
+            };
+            backToTop.onclick = function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+            // Animate skill badges
+            document.querySelectorAll('.skill-badge').forEach((el, i) => {
+                el.style.opacity = 0;
+                setTimeout(() => {
+                    el.style.transition = 'opacity 0.6s';
+                    el.style.opacity = 1;
+                }, 200 + i * 120);
+            });
+            // Section reveal on scroll
+            const revealSections = document.querySelectorAll('section');
+            function revealOnScroll() {
+                const trigger = window.innerHeight * 0.85;
+                revealSections.forEach(sec => {
+                    const top = sec.getBoundingClientRect().top;
+                    if (top < trigger) sec.classList.add('visible');
+                });
+            }
+            window.addEventListener('scroll', revealOnScroll);
+            window.addEventListener('load', revealOnScroll);
+        </script>
+    </body>
 </html>
